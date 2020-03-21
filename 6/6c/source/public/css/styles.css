@@ -1,0 +1,79 @@
+body {
+    font-family: 'Noto Sans';
+}
+
+table {
+    font-size: 120%;
+}
+
+i {
+    padding: 0 5px;
+    font-size: 140%;
+}
+
+.hijau {
+    color: rgb(93, 255, 93);
+}
+
+.merah {
+    color: rgb(255, 117, 117);
+}
+
+.mt-table {
+    margin-top: 7rem;
+    line-height: 2.5;
+}
+
+.form-rounded {
+    border-radius: 0.5rem !important;
+}
+.form-rounded-1 {
+    border-radius: 1.5rem !important;
+}
+
+thead th:first-of-type {
+    border-top-left-radius: 1.5rem !important; 
+}
+
+thead th:last-of-type {
+    border-top-right-radius: 1.5rem !important; 
+}
+
+.garis-bawah {
+    border-bottom: 1px solid rgb(189, 189, 189);
+}
+
+.modal-header .modal-footer {
+    height: 80%;
+}
+
+.modal-body {
+    padding: 0 10rem;
+}
+
+.container tbody tr td > button {
+    border: 0;
+    background-color: transparent;
+}
+
+.none-border {
+        outline: none;
+        border: none !important;
+        -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        box-shadow: none !important;
+}
+
+.fa-check-circle {
+    font-size: 1000%;
+    padding: 2rem 0;
+    color: greenyellow;
+}
+
+.col-number {
+    width: 100px;
+}
+
+.col-action {
+    width: 150px;
+}

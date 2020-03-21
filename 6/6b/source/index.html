@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- font Awesome -->
+  <link rel="stylesheet" href="./assets/css/all.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+  <!-- CSS Custom -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <title>Arkademy</title>
+
+  <style>
+    .search::placeholder {
+      color: white !important;
+      opacity: 1 !important;
+    }
+    .modal-content {
+      border-radius: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top p-0 navbar-dark bg-light shadow">
+    <!-- Logo -->
+    <a class="navbar-brand ml-5 py-0" href="#"><img src="assets/images/logo.png" width="110" height="77" alt=""></a>
+    <!-- Search, Add Button -->
+    <form class="form-inline">
+      <input style="background-color: gray; color: white;" class="search form-control form-rounded px-3 mr-5"
+        type="search" size="100" placeholder="Search...">
+      <a class="btn btn-warning btn-lg form-rounded px-5 mx-5 text-white shadow"
+        data-toggle="modal" data-target="#add_modal" type="button">ADD</a>
+    </form>
+  </nav>
+
+  <!-- Modal Add-->
+  <form>
+  <div class="modal fade" id="add_modal">
+    <div class="modal-dialog modal-lg modal-dialog-centered form-rounded-1" role="document">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h1 class="modal-title ml-4">ADD</h1>
+          <button type="button" class="close mr-4" data-dismiss="modal" aria-label="Close">
+            <h1><span aria-hidden="true">&times;</span></h1>
+          </button>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+
+            <!-- Cahier Name -->
+            <div class="form-group garis-bawah mb-4">
+              <select id="id_cashier" name="id_cashier" class="form-control form-control-lg none-border">
+                <option value="" disabled selected>Raisa Andriana</option>
+
+              </select>
+            </div>
+            <!-- Category Name -->
+            <div class="form-group garis-bawah mb-4">
+              <select id="id_category" name="id_category" class="form-control form-control-lg none-border">
+                <option value="" disabled selected>Food</option>
+              </select>
+            </div>
+            <!-- Product Name -->
+            <div class="form-group garis-bawah mb-4">
+              <input type="text" id="name" name="name" class="form-control form-control-lg none-border"
+                placeholder="Cake" required>
+              
+            </div>
+            <!-- Price Product -->
+            <div class="form-group garis-bawah mb-4">
+              <input type="text" id="price" name="price" class="form-control form-control-lg none-border"
+                placeholder="Rp 10000" required>
+              
+            </div>
+            <!-- Modal Footer -->
+
+            <div class="modal-footer">
+              <button onclick="addData()"
+                class="btn btn-warning btn-lg form-rounded px-5 mx-5 text-white shadow">ADD</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </form>
+
+    <!-- Modal Edit-->
+    <form>
+      <div class="modal fade" id="edit_modal">
+        <div class="modal-dialog modal-lg modal-dialog-centered form-rounded-1" role="document">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h1 class="modal-title ml-4">EDIT</h1>
+              <button type="button" class="close mr-4" data-dismiss="modal" aria-label="Close">
+                <h1><span aria-hidden="true">&times;</span></h1>
+              </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+    
+                <!-- Cahier Name -->
+                <div class="form-group garis-bawah mb-4">
+                  <select id="id_cashier" name="id_cashier" class="form-control form-control-lg none-border">
+                    <option value="" disabled selected>Raisa Andriana</option>
+    
+                  </select>
+                </div>
+                <!-- Category Name -->
+                <div class="form-group garis-bawah mb-4">
+                  <select id="id_category" name="id_category" class="form-control form-control-lg none-border">
+                    <option value="" disabled selected>Food</option>
+                  </select>
+                </div>
+                <!-- Product Name -->
+                <div class="form-group garis-bawah mb-4">
+                  <input type="text" id="name" name="name" class="form-control form-control-lg none-border"
+                    placeholder="Cake" required>
+                  
+                </div>
+                <!-- Price Product -->
+                <div class="form-group garis-bawah mb-4">
+                  <input type="text" id="price" name="price" class="form-control form-control-lg none-border"
+                    placeholder="Rp 10000" required>
+                  
+                </div>
+                <!-- Modal Footer -->
+    
+                <div class="modal-footer">
+                  <button class="btn btn-warning btn-lg form-rounded px-5 mx-5 text-white shadow">EDIT</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+
+  <!-- Modal Notif Delete -->
+  <form>
+  <div class="modal fade" id="delete_modal">
+    <div class="modal-dialog modal-lg modal-dialog-centered form-rounded-1" role="document">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h1 class="modal-title ml-4"></h1>
+          <button type="button" class="close mr-4" data-dismiss="modal" aria-label="Close">
+            <h1><span aria-hidden="true">&times;</span></h1>
+          </button>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body text-center mb-5 pb-5">
+          <h3 id="message">Data Raisa Andriani ID <span style="color: orange;">#1</span></h3>
+          <i class="far fa-check-circle"></i>
+          <h3>Berhasil Dihapus </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  </form>
+
+
+
+
+  <!-- Content -->
+  <div class="container">
+    <div class="row mt-table">
+      <table class="table table-borderless form-rounded-1 shadow text-center">
+        <!-- Table Header -->
+        <thead class="bg-warning text-light">
+          <tr>
+            <th scope="col" class="col-number">No</th>
+            <th scope="col">Cashier</th>
+            <th scope="col">Product</th>
+            <th scope="col">Category</th>
+            <th scope="col">Price</th>
+            <th scope="col" class="col-action">Action</th>
+          </tr>
+        </thead>
+        <!-- Table Body -->
+        <tbody id="newRowProduct">
+          <!-- Container Show The Table -->
+          <tr>
+            <th scope="row">1</th>
+            <td>Pevita Pearce</td>
+            <td>Latte</td>
+            <td>Drink</td>
+            <td>Rp. 10.000</td>
+            <td><button data-toggle="modal" data-target="#edit_modal"><i class="far fa-edit hijau"></i></button>
+              <button data-toggle="modal" data-target="#delete_modal"><i class="fas fa-trash-alt merah"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Raisa Andriana</td>
+            <td>Cake</td>
+            <td>Food</td>
+            <td>Rp. 15.000</td>
+            <td><button data-toggle="modal" data-target="#edit_modal"><i class="far fa-edit hijau"></i></button>
+              <button data-toggle="modal" data-target="#delete_modal"><i class="fas fa-trash-alt merah"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Raisa Andriana</td>
+            <td>Fried Rice</td>
+            <td>Food</td>
+            <td>Rp. 30.000</td>
+            <td><button data-toggle="modal" data-target="#edit_modal"><i class="far fa-edit hijau"></i></button>
+              <button data-toggle="modal" data-target="#delete_modal"><i class="fas fa-trash-alt merah"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Pevita Pearce</td>
+            <td>Gudeg</td>
+            <td>Food</td>
+            <td>Rp. 35.000</td>
+            <td><button data-toggle="modal" data-target="#edit_modal"><i class="far fa-edit hijau"></i></button>
+              <button data-toggle="modal" data-target="#delete_modal"><i class="fas fa-trash-alt merah"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Joko Purwadhi</td>
+            <td>Icea Tea</td>
+            <td>Drink</td>
+            <td>Rp. 55.000</td>
+            <td><button data-toggle="modal" data-target="#edit_modal"><i class="far fa-edit hijau"></i></button>
+              <button data-toggle="modal" data-target="#delete_modal"><i class="fas fa-trash-alt merah"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>Zulfian</td>
+            <td>Ayam Sambal Ijo</td>
+            <td>Food</td>
+            <td>Rp. 99.900</td>
+            <td><a class="btn" type="button" data-toggle="modal" data-target="#edit_modal"><i class="far fa-edit hijau"></i></a>
+              <a class="btn" type="button" data-toggle="modal" data-target="#delete_modal"><i class="fas fa-trash-alt merah"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="./assets/js/jquery3.4.1.min.js"></script>
+  <script src="./assets/js/propper.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>
